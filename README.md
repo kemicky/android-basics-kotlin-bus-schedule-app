@@ -1,10 +1,9 @@
-# Bus Scheduler App
+# Bus Scheduler App ~ My Copy
 This folder contains the source code for the Bus Scheduler app codelab.
 
-
-Author: Kemmy MO Jones
-Date: Nov 19th, 2022.
-Topic: Code Labs SQL Project Solution ~ Introduction To Room Flow.
+- Author: Kemmy MO Jones
+- Date: Nov 19th, 2022.
+- Topic: Code Labs SQL Project Solution ~ Introduction To Room Flow.
 
 
 # Introduction
