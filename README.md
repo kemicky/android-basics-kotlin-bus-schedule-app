@@ -1,11 +1,11 @@
 # Bus Scheduler App
 This folder contains the source code for the Bus Scheduler app codelab.
 
-/*
+
 Author: Kemmy MO Jones
 Date: Nov 19th, 2022.
 Topic: Code Labs SQL Project Solution ~ Introduction To Room Flow.
-*/
+
 
 # Introduction
 The Bus Scheduler app displays a list of bus stops and arrival times. Tapping a bus stop on the first screen will display a list of all arrival times for that particular stop.
