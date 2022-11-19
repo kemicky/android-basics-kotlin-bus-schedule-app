@@ -23,7 +23,7 @@ import kotlinx.coroutines.flow.Flow
  * Provides access to read/write operations on the schedule table.
  * Used by the view models to format the query results for use in the UI.
  *
- * Author: Kemmy MO Jones
+ * Author: Kemmy MO Jones ~ copy from Developers codelab
  * Date: Nov 19th, 2022.
  * Topic: Code Labs SQL Project Solution ~ Introduction To Room & Flow.
  */

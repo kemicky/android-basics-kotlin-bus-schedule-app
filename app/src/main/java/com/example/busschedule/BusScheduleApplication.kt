@@ -13,6 +13,10 @@ package com.example.busschedule
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+* Author: Kemmy MO Jones ~ copy from Developers codelab
+ * Date: Nov 19th, 2022.
+ * Topic: Code Labs SQL Project Solution ~ Introduction To Room & Flow.
  */
 
 import android.app.Application
@@ -20,4 +24,4 @@ import com.example.busschedule.database.AppDatabase
 
 class BusScheduleApplication : Application() {
     val database: AppDatabase by lazy { AppDatabase.getDatabase(this) }
-}
+} //end: BusScheduleApplication

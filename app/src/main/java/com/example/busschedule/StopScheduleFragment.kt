@@ -15,6 +15,12 @@
  */
 package com.example.busschedule
 
+/*
+ * Author: Kemmy MO Jones ~ copy from Developers codelab
+ * Date: Nov 19th, 2022.
+ * Topic: Code Labs SQL Project Solution ~ Introduction To Room & Flow.
+*/
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,14 +33,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.busschedule.databinding.StopScheduleFragmentBinding
 import com.example.busschedule.viewmodels.BusScheduleViewModel
 import com.example.busschedule.viewmodels.BusScheduleViewModelFactory
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class StopScheduleFragment: Fragment() {
 
     companion object {
         var STOP_NAME = "stopName"
-    }
+    } //end: companion object
 
     private var _binding: StopScheduleFragmentBinding? = null
 
@@ -48,7 +53,7 @@ class StopScheduleFragment: Fragment() {
         BusScheduleViewModelFactory(
             (activity?.application as BusScheduleApplication).database.scheduleDao()
         )
-    }
+    } //end: BusScheduleViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,23 +61,22 @@ class StopScheduleFragment: Fragment() {
         arguments?.let {
             stopName = it.getString(STOP_NAME).toString()
         }
-    }
+    }//end: onCreate
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = StopScheduleFragmentBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
-    }
+        return binding.root
+    } //end: onCreateView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        val busStopAdapter = BusStopAdapter({})
+        val busStopAdapter = BusStopAdapter {}
         // by passing in the stop name, filtered results are returned,
         // and tapping rows won't trigger navigation
         recyclerView.adapter = busStopAdapter
@@ -81,10 +85,10 @@ class StopScheduleFragment: Fragment() {
                 busStopAdapter.submitList(it)
             }
         }
-    }
+    } //end: onViewCreated
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-}
+} //end: onDestroy

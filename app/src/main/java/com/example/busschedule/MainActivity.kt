@@ -15,6 +15,13 @@
  */
 package com.example.busschedule
 
+/*
+ * Author: Kemmy MO Jones ~ copy from Developers codelab
+ * Date: Nov 19th, 2022.
+ * Topic: Code Labs SQL Project Solution ~ Introduction To Room & Flow.
+*/
+
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -36,9 +43,9 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
-    }
+    } //end: onCreate
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
-}
+} //end: NavigateUp

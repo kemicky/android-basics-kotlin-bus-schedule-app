@@ -12,6 +12,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Author: Kemmy MO Jones ~ copy from Developers codelab
+ * Date: Nov 19th, 2022.
+ * Topic: Code Labs SQL Project Solution ~ Introduction To Room & Flow.
  */
 package com.example.busschedule
 
@@ -40,7 +44,7 @@ class BusStopAdapter(
                 return oldItem == newItem
             }
         }
-    }
+    } //end: companion object
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BusStopViewHolder {
         val viewHolder = BusStopViewHolder(
@@ -55,11 +59,11 @@ class BusStopAdapter(
             onItemClicked(getItem(position))
         }
         return viewHolder
-    }
+    } //end: onCreateViewHolder
 
     override fun onBindViewHolder(holder: BusStopViewHolder, position: Int) {
         holder.bind(getItem(position))
-    }
+    } //end: onBindViewHolder
 
     class BusStopViewHolder(
         private var binding: BusStopItemBinding
@@ -72,4 +76,4 @@ class BusStopAdapter(
             )
         }
     }
-}
+} //end: BusStopViewHolder

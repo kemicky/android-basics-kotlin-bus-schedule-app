@@ -15,6 +15,12 @@
  */
 package com.example.busschedule
 
+/*
+ * Author: Kemmy MO Jones ~ copy from Developers codelab
+ * Date: Nov 19th, 2022.
+ * Topic: Code Labs SQL Project Solution ~ Introduction To Room & Flow.
+*/
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +34,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.busschedule.databinding.FullScheduleFragmentBinding
 import com.example.busschedule.viewmodels.BusScheduleViewModel
 import com.example.busschedule.viewmodels.BusScheduleViewModelFactory
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class FullScheduleFragment: Fragment() {
@@ -43,39 +48,38 @@ class FullScheduleFragment: Fragment() {
         BusScheduleViewModelFactory(
             (activity?.application as BusScheduleApplication).database.scheduleDao()
         )
-    }
+    } //end: FullScheduleFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FullScheduleFragmentBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
-    }
+        return binding.root
+    } //end: onCreateView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        val busStopAdapter = BusStopAdapter({
+        val busStopAdapter = BusStopAdapter {
             val action = FullScheduleFragmentDirections
                 .actionFullScheduleFragmentToStopScheduleFragment(
-                stopName = it.stopName
-            )
+                    stopName = it.stopName
+                )
             view.findNavController().navigate(action)
-        })
+        }
         recyclerView.adapter = busStopAdapter
         lifecycle.coroutineScope.launch {
             viewModel.fullSchedule().collect {
                 busStopAdapter.submitList(it)
             }
         }
-    }
+    } //end: onViewCreated
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-}
+} //end: onDestroy

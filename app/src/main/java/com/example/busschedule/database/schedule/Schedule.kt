@@ -26,7 +26,7 @@ import androidx.room.PrimaryKey
  * Each property corresponds to a column. Additionally, an ID is needed as a unique identifier for
  * each row in the database.
  *
- * Author: Kemmy MO Jones
+ * Author: Kemmy MO Jones ~ copy from Developers codelab
  * Date: Nov 19th, 2022.
  * Topic: Code Labs SQL Project Solution ~ Introduction To Room & Flow.
  */

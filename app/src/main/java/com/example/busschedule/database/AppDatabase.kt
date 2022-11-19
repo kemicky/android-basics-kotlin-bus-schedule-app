@@ -26,8 +26,12 @@ import com.example.busschedule.database.schedule.ScheduleDao
  * Defines a database and specifies data tables that will be used.
  * Version is incremented as new tables/columns are added/removed/changed.
  * You can optionally use this class for one-time setup, such as pre-populating a database.
+ *
+ * Author: Kemmy MO Jones ~ copy from Developers codelab
+ * Date: Nov 19th, 2022.
+ * Topic: Code Labs SQL Project Solution ~ Introduction To Room & Flow.
  */
-@Database(entities = arrayOf(Schedule::class), version = 1)
+@Database(entities = [Schedule::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun scheduleDao(): ScheduleDao
 
@@ -49,4 +53,4 @@ abstract class AppDatabase: RoomDatabase() {
             }
         }
     }
-}
+} //end: companion object
