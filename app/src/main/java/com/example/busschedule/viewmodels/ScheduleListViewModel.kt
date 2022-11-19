@@ -13,6 +13,10 @@ package com.example.busschedule.viewmodels
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Author: Kemmy MO Jones
+ * Date: Nov 19th, 2022.
+ * Topic: Code Labs SQL Project Solution ~ Introduction To Room & Flow
  */
 
 import androidx.lifecycle.ViewModel
@@ -21,12 +25,14 @@ import com.example.busschedule.database.schedule.Schedule
 import com.example.busschedule.database.schedule.ScheduleDao
 import kotlinx.coroutines.flow.Flow
 
+//view model class.
 class BusScheduleViewModel(private val scheduleDao: ScheduleDao): ViewModel() {
 
     fun fullSchedule(): Flow<List<Schedule>> = scheduleDao.getAll()
 
     fun scheduleForStopName(name: String): Flow<List<Schedule>> = scheduleDao.getByStopName(name)
-}
+
+} //end: BusScheduleViewModel
 
 class BusScheduleViewModelFactory(
     private val scheduleDao: ScheduleDao
@@ -38,4 +44,4 @@ class BusScheduleViewModelFactory(
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
-}
+} //end: BusScheduleViewModelFactory

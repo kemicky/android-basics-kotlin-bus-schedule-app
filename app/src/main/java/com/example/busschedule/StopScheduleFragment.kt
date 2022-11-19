@@ -77,7 +77,7 @@ class StopScheduleFragment: Fragment() {
         // and tapping rows won't trigger navigation
         recyclerView.adapter = busStopAdapter
         lifecycle.coroutineScope.launch {
-            viewModel.scheduleForStopName(stopName).collect() {
+            viewModel.scheduleForStopName(stopName).collect {
                 busStopAdapter.submitList(it)
             }
         }

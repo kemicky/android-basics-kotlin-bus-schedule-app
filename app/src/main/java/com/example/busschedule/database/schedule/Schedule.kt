@@ -15,6 +15,7 @@
  */
 package com.example.busschedule.database.schedule
 
+import android.annotation.SuppressLint
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -25,9 +26,14 @@ import androidx.room.PrimaryKey
  * Each property corresponds to a column. Additionally, an ID is needed as a unique identifier for
  * each row in the database.
  *
+ * Author: Kemmy MO Jones
+ * Date: Nov 19th, 2022.
+ * Topic: Code Labs SQL Project Solution ~ Introduction To Room & Flow.
  */
 @Entity
+@SuppressLint("KotlinNullnessAnnotation")
 data class Schedule(
+    // Properties
     @PrimaryKey val id: Int,
     @NonNull @ColumnInfo(name = "stop_name") val stopName: String,
     @NonNull @ColumnInfo(name = "arrival_time") val arrivalTime: Int

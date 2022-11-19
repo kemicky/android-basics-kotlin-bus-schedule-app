@@ -68,7 +68,7 @@ class FullScheduleFragment: Fragment() {
         })
         recyclerView.adapter = busStopAdapter
         lifecycle.coroutineScope.launch {
-            viewModel.fullSchedule().collect() {
+            viewModel.fullSchedule().collect {
                 busStopAdapter.submitList(it)
             }
         }
